@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "build:eleventy": "eleventy",
-    "build:sass": "sass src/static/scss:dist/css",
+    "build:sass": "sass src/static:dist/css",
     "watch:eleventy": "eleventy --serve --quiet",
-    "watch:sass": "sass src/static/scss:dist/css --watch",
+    "watch:sass": "sass src/static:dist/css --watch",
     "start": "npm-run-all --parallel build:sass watch:eleventy watch:sass",
     "build": "npm-run-all build:*",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
