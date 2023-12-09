@@ -1,0 +1,142 @@
+// ** ----------------------------------------
+// ** INIT
+// ** ----------------------------------------
+
+@use "base";
+
+// ?? ----------------------------------------
+// ?? GLOBAL ELEMENTS
+// ?? ----------------------------------------
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    font-size: clamp(16px, calc(16px + 4 * ((100vw - 320px) / 700)), 20px);
+    line-height: 1.5;
+}
+
+body {
+    position: relative;
+    min-height: 200dvh;
+    width: 100%;
+    margin: 0;
+    padding: 0 base.$padding-global-rl;
+    background-color: base.$gray-25;
+    color: base.$gray-700;
+    font-family: base.$font-family-body;
+    font-size: base.$font-size_body;
+    kerning: auto;
+    font-kerning: auto;
+    overflow-x: hidden;
+    animation: body-background 5s ease-in-out infinite;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: base.$font-family-heading;
+    line-height: base.$font-lineHeight_132;
+}
+
+h1 {
+    font-size: base.$font-size_h1;
+    font-weight: base.$font-weight_bold;
+}
+
+h2 {
+    font-size: base.$font-size_h2;
+    font-weight: base.$font-weight_semiBold;
+}
+
+h3 {
+    font-size: base.$font-size_h3;
+    font-weight: base.$font-weight_medium;
+}
+
+h4 {
+    font-size: base.$font-size_h4;
+    font-weight: base.$font-weight_normal;
+}
+
+h5 {
+    font-size: base.$font-size_h5;
+    font-weight: base.$font-weight_normal;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+small {
+    font-size: base.$font-size_body-small;
+}
+
+a, button {
+    all: unset;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+// * ---- Spacers ----
+
+.__spacer {
+    width: 100%;
+    background: transparent;
+    &_regular {
+        height: base.$external-80px;
+    }
+}
+
+// * --------------------------------
+
+.progress-container {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: base.$internal-4px 0;
+    background-color: base.$gray-900;
+    z-index: 5;
+
+    div {
+        flex: 1;
+        color: #fff;
+        font-size: base.$font-size_body-small;
+        line-height: base.$font-lineHeight_100;
+
+        &:first-of-type {
+            padding-left: base.$internal-24px;
+        }
+
+        &.progress-percent {
+            text-align: center;
+            flex: 0;
+            width: 0;
+            padding: 0 base.$external-45px;
+        }
+    }
+
+    .progress-bar {
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        bottom: 0;
+        left: 0;
+        background-color: base.$blue-900;
+        z-index: -1;
+    }
+}
